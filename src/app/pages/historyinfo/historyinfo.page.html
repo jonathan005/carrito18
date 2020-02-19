@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar mode='ios'>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Historial de Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of listapedidos" button="true" (click)="abrirDetalle(item.id)">
+    <ion-grid >
+        <ion-row>
+          <ion-col>
+            Fecha de pedido
+          </ion-col>
+          <ion-col>
+            {{item.fechadepedido}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Monto de compra
+          </ion-col>
+          <ion-col>
+            $ {{item.total}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Estado
+          </ion-col>
+          <ion-col>
+            {{item.estado}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            Fecha de entrega
+          </ion-col>
+          <ion-col>
+            21 de septiembre de 2019
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
